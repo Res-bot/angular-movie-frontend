@@ -1,0 +1,29 @@
+<header class="header">
+  <div class="logo">
+    <img src="assets/logo.png" alt="Streamr Logo" />
+    <span>Streamr</span>
+  </div>
+
+  <nav class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">Series</a>
+    <a href="#">Movies</a>
+    <a href="#">New & Noteworthy</a>
+  </nav>
+
+  <div class="search-profile">
+    <input type="text" placeholder="Search" />
+    <img src="assets/profile.jpg" alt="Profile" class="profile-pic" />
+  </div>
+
+  <!-- Mobile toggle -->
+  <button class="menu-btn" (click)="toggleMenu()">☰</button>
+</header>
+
+<!-- Mobile Dropdown -->
+<nav class="mobile-menu" [hidden]="!isMenuOpen">
+  <a href="#">Home</a>
+  <a href="#">Series</a>
+  <a href="#">Movies</a>
+  <a href="#">New & Noteworthy</a>
+</nav>
