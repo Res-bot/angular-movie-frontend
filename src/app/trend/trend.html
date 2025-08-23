@@ -1,0 +1,69 @@
+<main>
+  <!-- Trending -->
+  <section>
+    <h2>Trending Now</h2>
+    <div class="trending">
+
+      <div class="movie" (click)="openMovie('the-last-stand')">
+        <div class="movie-card" style="background: white;">
+          <img src="/assets/Last.jpg" alt="The Last Stand">
+        </div>
+        <h3>The Last Stand</h3>
+        <p>10M views</p>
+      </div>
+
+      <div class="movie" (click)="openMovie('echoes-of-yesterday')">
+        <div class="movie-card" style="background: #f6f1de;">
+          <img src="/assets/Echo.jpg" alt="Echoes of Yesterday">
+        </div>
+        <h3>Echoes of Yesterday</h3>
+        <p>8M views</p>
+      </div>
+
+      <div class="movie" (click)="openMovie('laugh-riot')">
+        <div class="movie-card" style="background: #6ea89a;">
+          <img src="/assets/Lau.jpg" alt="Laugh Riot">
+        </div>
+        <h3>Laugh Riot</h3>
+        <p>7M views</p>
+      </div>
+
+      <div class="movie" (click)="openMovie('silent-witness')">
+        <div class="movie-card" style="background: #d9e1e1;">
+          <img src="/assets/Sil.jpg" alt="Silent Witness">
+        </div>
+        <h3>Silent Witness</h3>
+        <p>6M views</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Cast Spotlight -->
+  <section>
+    <h2>Cast Spotlight</h2>
+    <div class="cast">
+
+      <div class="cast-member" (click)="openCast('ethan-blake')">
+        <img src="/assets/Eth.jpg" alt="Ethan Blake">
+        <p>Ethan Blake</p>
+      </div>
+
+      <div class="cast-member" (click)="openCast('olivia-hayes')">
+        <img src="/assets/Ol.jpg" alt="Olivia Hayes">
+        <p>Olivia Hayes</p>
+      </div>
+
+      <div class="cast-member" (click)="openCast('marcus-reed')">
+        <img src="/assets/Mar.jpg" alt="Marcus Reed">
+        <p>Marcus Reed</p>
+      </div>
+
+      <div class="cast-member" (click)="openCast('sophia-carter')">
+        <img src="/assets/Sop.jpg" alt="Sophia Carter">
+        <p>Sophia Carter</p>
+      </div>
+
+    </div>
+  </section>
+</main>
