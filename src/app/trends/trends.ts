@@ -24,8 +24,12 @@ export class Trends {
 
     this.updateButtons();
 
-    this.renderer.listen(this.prevBtn, 'click', () => this.move(-1));
-    this.renderer.listen(this.nextBtn, 'click', () => this.move(1));
+    if (this.prevBtn) {
+      this.renderer.listen(this.prevBtn, 'click', () => this.move(-1));
+    }
+    if (this.nextBtn) {
+      this.renderer.listen(this.nextBtn, 'click', () => this.move(1));
+    }
   }
 
   move(direction: number): void {
@@ -33,11 +37,10 @@ export class Trends {
     const maxIndex = this.items.length - visibleItems;
 
     this.currentIndex += direction;
-
     if (this.currentIndex < 0) this.currentIndex = 0;
     if (this.currentIndex > maxIndex) this.currentIndex = maxIndex;
 
-    const itemWidth = this.items[0].offsetWidth + 20; // 20px gap
+    const itemWidth = this.items[0].offsetWidth + 24; // matches CSS gap
     const translateX = -(this.currentIndex * itemWidth);
 
     this.track.style.transform = `translateX(${translateX}px)`;
@@ -46,10 +49,11 @@ export class Trends {
 
   getVisibleItems(): number {
     const width = window.innerWidth;
-    if (width <= 600) return 2; // mobile
-    if (width <= 900) return 3; // tablet
-    if (width <= 1200) return 4; // small laptop
-    return 5; // desktop
+    if (width <= 400) return 1;
+    if (width <= 600) return 2;
+    if (width <= 900) return 3;
+    if (width <= 1200) return 4;
+    return 5;
   }
 
   updateButtons(): void {
@@ -57,15 +61,15 @@ export class Trends {
     const maxIndex = this.items.length - visibleItems;
 
     if (this.currentIndex === 0) {
-      this.prevBtn.classList.add('nav-disabled');
+      this.prevBtn?.classList.add('nav-disabled');
     } else {
-      this.prevBtn.classList.remove('nav-disabled');
+      this.prevBtn?.classList.remove('nav-disabled');
     }
 
     if (this.currentIndex >= maxIndex) {
-      this.nextBtn.classList.add('nav-disabled');
+      this.nextBtn?.classList.add('nav-disabled');
     } else {
-      this.nextBtn.classList.remove('nav-disabled');
+      this.nextBtn?.classList.remove('nav-disabled');
     }
   }
 }
