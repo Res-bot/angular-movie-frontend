@@ -1,19 +1,29 @@
 <header class="header">
   <div class="logo">
-    <img src="assets/logo.png" alt="Streamr Logo" />
-    <span>Streamr</span>
+    <img src="assets/images/BingeItLogo.png" alt="Streamr Logo"/>
   </div>
 
   <nav class="nav-links">
     <a href="#">Home</a>
     <a href="#">Series</a>
     <a href="#">Movies</a>
-    <a href="#">New & Noteworthy</a>
+    <a href="#">Genre</a>
   </nav>
 
   <div class="search-profile">
-    <input type="text" placeholder="Search" />
-    <img src="assets/profile.jpg" alt="Profile" class="profile-pic" />
+    <!-- Search icon + expanding input -->
+    <div class="search-container" [class.active]="isSearchActive">
+      <button class="search-btn" (click)="toggleSearch()">
+        <img src="assets/images/search.png" alt="search" height="50" width="50">
+      </button>
+      <input 
+        *ngIf="isSearchActive" 
+        type="text" 
+        placeholder="Search"
+        class="search-input"
+        autofocus
+      />
+    </div>
   </div>
 
   <!-- Mobile toggle -->
@@ -25,5 +35,5 @@
   <a href="#">Home</a>
   <a href="#">Series</a>
   <a href="#">Movies</a>
-  <a href="#">New & Noteworthy</a>
+  <a href="#">Genre</a>
 </nav>

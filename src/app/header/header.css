@@ -2,9 +2,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #2b1c1c;
+  background: transparent; /* remove background for large screens */
   padding: 10px 20px;
   color: #fff;
+  height: 80px;
+  position: absolute; /* overlay on banner */
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  z-index: 20; /* make sure it sits above banner */
 }
 
 .logo {
@@ -16,7 +22,8 @@
 }
 
 .logo img {
-  height: 24px;
+  height: 200px;
+  width: 200px;
 }
 
 .nav-links {
@@ -27,12 +34,14 @@
 .nav-links a {
   text-decoration: none;
   color: #fff;
-  font-size: 0.95rem;
+  font-size: 1.5rem;
 }
+
 
 .search-profile {
   display: flex;
   align-items: center;
+  margin-left: 890px;
   gap: 10px;
 }
 
@@ -40,7 +49,7 @@
   padding: 6px 10px;
   border: none;
   border-radius: 6px;
-  background: #4d2f2f;
+  background: rgba(0, 0, 0, 0.4); /* make input blend with image */
   color: #fff;
 }
 
@@ -72,9 +81,47 @@
   color: #fff;
   text-decoration: none;
 }
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: width 0.3s ease;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.search-input {
+  width: 0;
+  opacity: 0;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  background: #4d2f2f;
+  color: white;
+  padding: 6px 10px;
+  margin-left: 8px;
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.search-container.active .search-input {
+  width: 180px; /* expand smoothly */
+  opacity: 1;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
+  .header {
+    background: #2b1c1c; /* restore old navbar background */
+    position: relative; /* no overlay */
+  }
+
   .nav-links,
   .search-profile {
     display: none;
