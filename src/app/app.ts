@@ -1,16 +1,15 @@
-import { Component, signal } from '@angular/core';
-import { Footer } from "./footer/footer";
-import { HeaderComponent } from "./header/header";
-import { Home } from "./home/home";
-import { Trends } from "./trends/trends";
-
+import { Component } from '@angular/core';
+import { Banner } from './banner/banner';
+import { HeaderComponent } from './header/header';
+import { Trends } from './trends/trends';
+import { Faq } from './faq/faq';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [Footer, HeaderComponent, Home, Trends],
+  standalone: true,
+  imports: [CommonModule,  Banner, HeaderComponent, Trends, Faq],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
-export class App {
-  protected readonly title = signal('frontend');
-}
+export class App {}
